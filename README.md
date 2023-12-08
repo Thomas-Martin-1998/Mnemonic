@@ -1,8 +1,8 @@
-Mnemonic is a cancled project.
+Mnemonic is a canceled project.
 
-The IOS app store rejected it due to lack of functionaility, I personally enjoy it and use it occasionally.
+The IOS app store rejected it due to lack of functionality, I personally enjoy it and use it occasionally.
 
-The APP converts images into secure passwords. Never forget a password, just rember what image is assocated with the account. 
+The app converts images into secure passwords. Never forget a password, just remember what image is associated with the account.
 
 For example, while not very secure your Facebook password could be your facebook profile picture.
 
