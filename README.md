@@ -7,3 +7,5 @@ The APP converts images into secure passwords. Never forget a password, just rem
 For example, while not very secure your Facebook password could be your facebook profile picture.
 
 Inspired by 1995 film "Johnny Mnemonic".
+
+Support page: https://sites.google.com/view/mnemonic-app/home
