@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mnemonic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i51-If-FnK">
+                                <rect key="frame" x="149" y="533" width="116" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WVb-vH-e02"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Select Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VII-kF-y0f"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="FsW-WV-by9">
+                                <rect key="frame" x="32" y="238" width="350" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="ZvJ-Qw-WwQ"/>
+                                    <constraint firstAttribute="width" secondItem="FsW-WV-by9" secondAttribute="height" multiplier="1:1" id="u9a-Cn-ekC"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.2556358962762551" green="0.35350121670081969" blue="0.43100926133452871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FsW-WV-by9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3i1-c4-QbX"/>
+                            <constraint firstItem="i51-If-FnK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BIm-mY-4JX"/>
+                            <constraint firstItem="i51-If-FnK" firstAttribute="top" secondItem="FsW-WV-by9" secondAttribute="bottom" constant="-55" id="X02-td-CxH"/>
+                            <constraint firstItem="FsW-WV-by9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="XxT-Zi-INv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="2j1-9g-sed" kind="popoverPresentation" identifier="SG1" popoverAnchorView="8bC-Xf-vdC" id="8f0-lP-lp0">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
+        </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="ihd-2J-FOq">
+            <objects>
+                <viewController id="2j1-9g-sed" customClass="PopupViewController" customModule="Mnemonic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kpp-9e-05o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ax9-UB-lMY">
+                                <rect key="frame" x="57" y="313" width="300" height="260"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ax9-UB-lMY" secondAttribute="height" multiplier="15:13" id="AoF-2W-bTa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="260" id="R4z-Qt-Kle"/>
+                                    <constraint firstAttribute="height" constant="260" id="h4k-YT-ggX"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00000-00000-00000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZO-74-yef">
+                                <rect key="frame" x="102" y="425.5" width="210" height="25"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khj-HE-LJA">
+                                <rect key="frame" x="135.5" y="362" width="143" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aew-3L-2sK">
+                                <rect key="frame" x="167" y="495.5" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="p5U-53-cym"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="    Copy    ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="copyPress:" destination="2j1-9g-sed" eventType="touchUpInside" id="Vhb-sn-l5W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sDT-kJ-tpQ"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GZO-74-yef" firstAttribute="centerX" secondItem="sDT-kJ-tpQ" secondAttribute="centerX" id="0FP-aq-Rvu"/>
+                            <constraint firstItem="ax9-UB-lMY" firstAttribute="centerY" secondItem="sDT-kJ-tpQ" secondAttribute="centerY" id="6EG-YF-ls8"/>
+                            <constraint firstItem="GZO-74-yef" firstAttribute="top" secondItem="khj-HE-LJA" secondAttribute="bottom" constant="40" id="BDk-9c-Su2"/>
+                            <constraint firstItem="ax9-UB-lMY" firstAttribute="centerX" secondItem="sDT-kJ-tpQ" secondAttribute="centerX" id="FOw-Xw-nG1"/>
+                            <constraint firstItem="GZO-74-yef" firstAttribute="centerY" secondItem="sDT-kJ-tpQ" secondAttribute="centerY" constant="-5" id="Zku-Oq-Rv6"/>
+                            <constraint firstItem="Aew-3L-2sK" firstAttribute="top" secondItem="GZO-74-yef" secondAttribute="bottom" constant="45" id="bKd-6U-xpu"/>
+                            <constraint firstItem="khj-HE-LJA" firstAttribute="centerX" secondItem="sDT-kJ-tpQ" secondAttribute="centerX" id="dYh-dK-67l"/>
+                            <constraint firstItem="Aew-3L-2sK" firstAttribute="centerX" secondItem="sDT-kJ-tpQ" secondAttribute="centerX" id="ePR-N5-umb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ygz-Cq-gmy"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="ax9-UB-lMY" id="HGF-TC-LXo"/>
+                        <outlet property="codeTxt" destination="GZO-74-yef" id="LRM-EJ-ALi"/>
+                        <outlet property="copyBtn" destination="Aew-3L-2sK" id="A9N-Wn-e6m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ak7-R5-HxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950.72463768115949" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="key" width="1000" height="1000"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
